@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "title": "Grand Opening Extravaganza",
+        "description": "Join us for the grand opening of Imaji Coffee! Experience a day filled with live music, free coffee tastings, and exciting giveaways. Be part of our coffee-loving community!",
+        "image": "grand_opening.jpg",
+        "date": "2024-04-01",
+        "author": "Imaji Coffee Team"
+    },
+    {
+        "id": 2,
+        "title": "Barista Championship Results",
+        "description": "Our talented baristas showcased their skills in the regional Barista Championship. Congratulations to our winners! Explore the artistry that goes into every cup at Imaji Coffee.",
+        "image": "barista_championship.jpg",
+        "date": "2024-04-05",
+        "author": "Sarah Anderson"
+    },
+    {
+        "id": 3,
+        "title": "Coffee and Canvas Night",
+        "description": "Unleash your creativity at our Coffee and Canvas Night! Sip on delicious brews while creating your masterpiece. No experience needed – just bring your enthusiasm!",
+        "image": "canvas_night.jpg",
+        "date": "2024-04-10",
+        "author": "Imaji Events Team"
+    },
+    {
+        "id": 4,
+        "title": "Community Coffee Tasting",
+        "description": "Join us for a community coffee tasting event! Sample our latest blends, share your feedback, and connect with fellow coffee enthusiasts. Your opinion matters!",
+        "image": "community_tasting.jpg",
+        "date": "2024-04-15",
+        "author": "Imaji Coffee Team"
+    },
+    {
+        "id": 5,
+        "title": "Seasonal Menu Launch",
+        "description": "Exciting news! Our seasonal menu is here, featuring delightful new flavors. Indulge in refreshing summer blends and delectable treats. Discover a world of taste at Imaji Coffee.",
+        "image": "seasonal_menu.jpg",
+        "date": "2024-04-20",
+        "author": "Chef Olivia Simmons"
+    },
+    {
+        "id": 6,
+        "title": "Coffee and Conversations Workshop",
+        "description": "Join our Coffee and Conversations Workshop to explore the cultural and social aspects of coffee. Engage in thought-provoking discussions while savoring our signature brews.",
+        "image": "coffee_workshop.jpg",
+        "date": "2024-04-25",
+        "author": "Imaji Events Team"
+    },
+    {
+        "id": 7,
+        "title": "Sustainable Practices Award",
+        "description": "Imaji Coffee is proud to receive the Sustainable Practices Award! We are committed to eco-friendly initiatives, from sourcing to packaging. Thank you for supporting our green journey.",
+        "image": "sustainable_award.jpg",
+        "date": "2024-05-01",
+        "author": "Imaji Sustainability Team"
+    },
+    {
+        "id": 8,
+        "title": "Coffee and Yoga Retreat",
+        "description": "Escape to a world of relaxation with our Coffee and Yoga Retreat. Immerse yourself in serene surroundings, delightful coffee, and rejuvenating yoga sessions. Namaste with Imaji!",
+        "image": "yoga_retreat.jpg",
+        "date": "2024-05-05",
+        "author": "Yoga Instructor Maya Patel"
+    },
+    {
+        "id": 9,
+        "title": "Local Artisans Collaboration",
+        "description": "Imaji Coffee proudly collaborates with local artisans to bring you unique coffee accessories. Explore handcrafted mugs, pour-over sets, and more, blending artistry with your coffee ritual.",
+        "image": "artisans_collaboration.jpg",
+        "date": "2024-05-10",
+        "author": "Imaji Artisan Partners"
+    },
+    {
+        "id": 10,
+        "title": "Imaji Coffee Book Club Launch",
+        "description": "Calling all book and coffee lovers! Join the Imaji Coffee Book Club for lively discussions, cozy reading sessions, and exclusive discounts on our recommended reads. Let's dive into a world of words and coffee!",
+        "image": "book_club_launch.jpg",
+        "date": "2024-05-15",
+        "author": "Imaji Book Club Moderators"
+    }
+]

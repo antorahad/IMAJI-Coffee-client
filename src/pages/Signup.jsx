@@ -33,7 +33,7 @@ const Signup = () => {
                             </div>
                         </form>
                         <center>
-                            <p className="text-sm font-medium">{`Already have an account?`} <Link to={'/sigin'} className="underline">Sign In</Link></p>
+                            <p className="text-sm font-medium">{`Already have an account?`} <Link to={'/signin'} className="underline">Sign In</Link></p>
                         </center>
                     </div>
             </div>

@@ -10,7 +10,7 @@ const HomeMenu = () => {
     }, [])
     return (
         <div className="max-w-7xl mx-auto px-5 py-10">
-            <div className="flex items-center justify-evenly">
+            <div className="flex items-center justify-between">
                 <h1 className="text-4xl lg:text-5xl font-semibold">Find Your Favourite Menu</h1>
                 <div>
                     <button className="hidden lg:flex btn px-6 rounded-none text-sm text-white bg-baseColor hover:bg-baseColor focus:bg-baseColor border-none outline-none">Explore Menu</button>
