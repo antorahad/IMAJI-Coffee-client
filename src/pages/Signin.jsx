@@ -5,8 +5,8 @@ const Signin = () => {
         <div className="min-h-screen px-5 py-10">
             <div className="w-full lg:w-1/2 mx-auto">
             <div className="w-full p-5 bg-white border rounded-none space-y-6">
-                        <h1 className="text-5xl font-semibold">Welcome Back</h1>
-                        <p className="text-lg">Enter Your Credentials to access your account.</p>
+                        <h1 className="text-4xl font-semibold">Welcome Back</h1>
+                        <p>Enter Your Credentials to access your account.</p>
                         <button className="btn btn-block rounded-none text-sm bg-slate-100 hover:bg-slate-100 focus:bg-slate-100 border-none outline-none"> <FcGoogle size={20}/> Sign In Google</button>
                         <p className="text-center text-lg">Or used email</p>
                         <form>

@@ -23,7 +23,7 @@ const Workplace = () => {
         <div className='max-w-7xl mx-auto py-10 px-5'>
             <div className='flex flex-col gap-5 mb-10'>
                 <h1 className="text-4xl lg:text-5xl font-semibold">8 Comfy Workspace</h1>
-                <p className='w-[350px] text-lg leading-relaxed'>We Provide many attractive and unique workspaces so you will have no trouble finding the workspace you want.</p>
+                <p className='w-full lg:w-[350px] text-lg leading-relaxed'>We Provide many attractive and unique workspaces so you will have no trouble finding the workspace you want.</p>
             </div>
             <Carousel responsive={responsive} showDots={true}>
                 <div className='relative mx-2 border shadow-sm'>

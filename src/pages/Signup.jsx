@@ -4,8 +4,8 @@ const Signup = () => {
         <div className="min-h-screen px-5 py-10">
             <div className="w-full lg:w-1/2 mx-auto">
             <div className="w-full p-5 bg-white border rounded-none space-y-6">
-                        <h1 className="text-5xl font-semibold">Create Your Account</h1>
-                        <p className="text-lg">Create your account for easy shopping.</p>
+                        <h1 className="text-4xl font-semibold">Create Account</h1>
+                        <p>Create your account for easy shopping.</p>
                         <form>
                             <div className="form-control">
                                 <label className="label">
