@@ -1,18 +1,8 @@
-import image1 from "../assets/2.jpg";
-import image2 from "../assets/1.jpg";
 const Banner = () => {
     return (
-        <div className="min-h-screen flex items-center justify-center bg-[#FAEAB1] bg-opacity-50">
-           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 place-items-center max-w-7xl mx-auto px-5 py-10">
-                <div className="space-y-6">
-                    <h1 className="w-[350px] font-semibold text-5xl leading-relaxed">Choose Your Coffee & Space</h1>
-                    <p className="text-lg leading-relaxed">IMAJI Coffee has been serving 20,000+ cups of coffee and providing a comfortable place for our customers to work since 2010.</p>
-                    <img src={image2} alt="Banner Image"/>
-                </div>
-                <div>
-                    <img src={image1} alt="Banner Image"/>
-                </div>
-           </div>
+        <div className="min-h-screen hero-bg text-white px-5 space-y-6">
+            <h1 className="font-semibold text-6xl leading-relaxed">Choose Your <span className="text-baseColor">Coffee</span> & Space</h1>
+            <p className="text-xl font-light w-full lg:w-[650px] mx-auto lg:text-center leading-relaxed">IMAJI Coffee has been serving 20,000+ cups of coffee and providing a comfortable place for our customers to work since 2010.</p>
         </div>
     );
 };

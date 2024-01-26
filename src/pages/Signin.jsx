@@ -2,8 +2,8 @@ import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 const Signin = () => {
     return (
-        <div className="min-h-screen px-5 py-10">
-            <div className="w-full lg:w-1/2 mx-auto">
+        <div className="min-h-screen flex items-center justify-center px-5 py-10">
+            <div className="w-full lg:w-1/3 mx-auto">
             <div className="w-full p-5 bg-white border rounded-none space-y-6">
                         <h1 className="text-4xl font-semibold">Welcome Back</h1>
                         <p>Enter Your Credentials to access your account.</p>
