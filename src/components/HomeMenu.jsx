@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import MenuItem from "./MenuItem";
+import HomeItemCard from "./HomeItemCard";
 
 const HomeMenu = () => {
     const [menu, setMenu] = useState([]);
     useEffect(() => {
-        fetch('menu.json')
+        fetch('http://localhost:4000/items')
             .then(res => res.json())
             .then(data => setMenu(data))
     }, [])
@@ -18,7 +18,7 @@ const HomeMenu = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-10">
                 {
-                    menu.slice(0, 3).map(item => <MenuItem key={item.id} item={item}></MenuItem>)
+                    menu.slice(0, 3).map(homeItem => <HomeItemCard key={homeItem._id} homeItem={homeItem}></HomeItemCard>)
                 }
             </div>
             <div className="flex items-center justify-center lg:hidden">

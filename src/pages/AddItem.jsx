@@ -6,15 +6,41 @@ const AddItem = () => {
         const category = form.category.value;
         const price = form.price.value;
         const quantity = form.quantity.value;
+        const discountRate = form.discountRate.value;
+        const discountPrice = form.discountPrice.value;
+        const stockStatus = form.stockStatus.value;
+        const deliveryStatus = form.deliveryStatus.value;
+        const image = form.image.value;
+        const date = form.image.value;
+        const details = form.details.value;
 
         const newItem = {
             name,
             category,
             price,
-            quantity
+            quantity,
+            discountRate,
+            discountPrice,
+            stockStatus,
+            deliveryStatus,
+            image,
+            date,
+            details
         }
 
         console.log(newItem);
+
+        fetch('http://localhost:4000/items', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newItem)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
     }
     return (
         <div className="min-h-screen py-10 px-5 max-w-6xl mx-auto">
@@ -53,19 +79,15 @@ const AddItem = () => {
                         <div className="grid grid-cols-2 gap-5">
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Discount Status</span>
+                                    <span className="label-text">Discount Rate (%)</span>
                                 </label>
-                                <select className="select select-bordered w-full rounded-none">
-                                    <option disabled selected>Status</option>
-                                    <option>Avaiable</option>
-                                    <option>Unavailable</option>
-                                </select>
+                                <input type="text" name="discountRate" placeholder="Discount Rate" className="input input-bordered rounded-none" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Discount Price</span>
                                 </label>
-                                <input type="text" placeholder="Discount Price" className="input input-bordered rounded-none" />
+                                <input type="text" name="discountPrice" placeholder="Discount Price" className="input input-bordered rounded-none" />
                             </div>
                         </div>
                         <div className="grid grid-cols-2 gap-5">
@@ -73,7 +95,7 @@ const AddItem = () => {
                                 <label className="label">
                                     <span className="label-text">Stock Status</span>
                                 </label>
-                                <select className="select select-bordered w-full rounded-none">
+                                <select name="stockStatus" className="select select-bordered w-full rounded-none">
                                     <option disabled selected>Status</option>
                                     <option>Avaiable</option>
                                     <option>Unavailable</option>
@@ -83,7 +105,7 @@ const AddItem = () => {
                                 <label className="label">
                                     <span className="label-text">Delivery Status</span>
                                 </label>
-                                <select className="select select-bordered w-full rounded-none">
+                                <select name="deliveryStatus" className="select select-bordered w-full rounded-none">
                                     <option disabled selected>Status</option>
                                     <option>Avaiable</option>
                                     <option>Unavailable</option>
@@ -95,13 +117,13 @@ const AddItem = () => {
                                 <label className="label">
                                     <span className="label-text">Image URl</span>
                                 </label>
-                                <input type="text" placeholder="Item Sample Image" className="input input-bordered rounded-none" />
+                                <input type="text" name="image" placeholder="Item Sample Image" className="input input-bordered rounded-none" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Date</span>
                                 </label>
-                                <input type="date" placeholder="Item Sample Image" className="input input-bordered rounded-none" />
+                                <input type="date" name="date" placeholder="Item Sample Image" className="input input-bordered rounded-none" />
                             </div>
                         </div>
                         <div className="grid grid-cols-1 gap-5">
@@ -109,7 +131,7 @@ const AddItem = () => {
                                 <label className="label">
                                     <span className="label-text">Item Details</span>
                                 </label>
-                                <textarea placeholder="Add Prodcut Details" className="textarea textarea-bordered rounded-none h-52" />
+                                <textarea name="details" placeholder="Add Prodcut Details" className="textarea textarea-bordered rounded-none h-52" />
                             </div>
                         </div>
                         <div className="form-control mt-6">

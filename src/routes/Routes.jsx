@@ -6,6 +6,7 @@ import Signup from "../pages/Signup";
 import AddItem from "../pages/AddItem";
 import UpdateItem from "../pages/UpdateItem";
 import Error from "../error/Error";
+import Dashboard from "../pages/Dashboard";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
             {
                 path: '/updateform',
                 element: <UpdateItem/>
+            },
+            {
+                path: '/dashboard',
+                element: <Dashboard/>
             }
         ]
     },

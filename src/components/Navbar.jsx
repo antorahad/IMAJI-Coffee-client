@@ -47,6 +47,46 @@ const Navbar = () => {
                         <li className="px-3"><Link>News</Link></li>
                         {
                             user ?
+                                <li className="relative px-3">
+                                    {
+                                        user?.photoURL ?
+                                            <button className="avatar" onClick={handleUserToggle}>
+                                                <div className="w-11 rounded-full">
+                                                    <img src={user.photoURL} alt="User Image" />
+                                                </div>
+                                            </button>
+                                            :
+                                            <button className="avatar" onClick={handleUserToggle}>
+                                                <div className="w-11 rounded-full">
+                                                    <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" alt="User Image" />
+                                                </div>
+                                            </button>
+                                    }
+
+                                    <div className={userToggle ? "flex" : "hidden"}>
+                                        <ul className={user ? 'flex flex-col items-center z-20 text-xs font-bold absolute right-0 bg-white border p-5 w-52' : 'hidden'}>
+                                            <li className="py-3"><p>{user.email}</p></li>
+                                            <li className={user?.displayName ? 'flex py-3' : 'hidden'}><p>{user.displayName}</p></li>
+                                            <li className="py-3">
+                                                <Link to={'/dashboard'}>Dashboard</Link>
+                                            </li>
+                                            <li className="py-3"><button onClick={logOut}>Sign Out</button></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                :
+                                <li className="px-3">
+                                    <Link to={'/signin'}>
+                                        <button className="btn px-6 rounded-none text-sm text-white bg-baseColor hover:bg-baseColor focus:bg-baseColor border-none outline-none">Sign In</button>
+                                    </Link>
+                                </li>
+                        }
+                    </ul>
+
+                    <ul className="flex lg:hidden">
+                        {
+                            user ?
+
                                 <li className="relative">
                                     {
                                         user?.photoURL ?
@@ -68,58 +108,12 @@ const Navbar = () => {
                                             <li className="py-3"><p>{user.email}</p></li>
                                             <li className={user?.displayName ? 'flex py-3' : 'hidden'}><p>{user.displayName}</p></li>
                                             <li className="py-3">
-                                                <Link to={'/addform'}>Add Item</Link>
-                                            </li>
-                                            <li className="py-3">
-                                                <Link to={'/updateform'}>Update Item</Link>
+                                                <Link to={'/dashboard'}>Dashboard</Link>
                                             </li>
                                             <li className="py-3"><button onClick={logOut}>Sign Out</button></li>
                                         </ul>
                                     </div>
                                 </li>
-                                :
-                                <li className="px-3">
-                                    <Link to={'/signin'}>
-                                        <button className="btn px-6 rounded-none text-sm text-white bg-baseColor hover:bg-baseColor focus:bg-baseColor border-none outline-none">Sign In</button>
-                                    </Link>
-                                </li>
-                        }
-                    </ul>
-
-                    <ul className="flex lg:hidden">
-                        {
-                            user ?
-
-                            <li className="relative">
-                            {
-                                user?.photoURL ?
-                                    <button className="avatar" onClick={handleUserToggle}>
-                                        <div className="w-11 rounded-full">
-                                            <img src={user.photoURL} alt="User Image" />
-                                        </div>
-                                    </button>
-                                    :
-                                    <button className="avatar" onClick={handleUserToggle}>
-                                        <div className="w-11 rounded-full">
-                                            <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" alt="User Image" />
-                                        </div>
-                                    </button>
-                            }
-
-                            <div className={userToggle ? "flex" : "hidden"}>
-                                <ul className={user ? 'flex flex-col items-center z-20 text-xs font-bold absolute right-0 bg-white border p-5 w-52' : 'hidden'}>
-                                    <li className="py-3"><p>{user.email}</p></li>
-                                    <li className={user?.displayName ? 'flex py-3' : 'hidden'}><p>{user.displayName}</p></li>
-                                    <li className="py-3">
-                                        <Link to={'/addform'}>Add Item</Link>
-                                    </li>
-                                    <li className="py-3">
-                                        <Link to={'/updateform'}>Update Item</Link>
-                                    </li>
-                                    <li className="py-3"><button onClick={logOut}>Sign Out</button></li>
-                                </ul>
-                            </div>
-                        </li>
                                 :
                                 <li><Link to={'/signin'}><button className="btn px-6 rounded-none text-sm text-white bg-baseColor hover:bg-baseColor focus:bg-baseColor border-none outline-none">Sign In</button></Link></li>
                         }
