@@ -6,17 +6,20 @@ import Signup from "../pages/Signup";
 import AddItem from "../pages/AddItem";
 import UpdateItem from "../pages/UpdateItem";
 import Error from "../error/Error";
-import Dashboard from "../pages/Dashboard";
+import DashboardMenu from "../pages/DashboardMenu";
+import DashViewDetails from "../pages/DashViewDetails";
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Layout/>,
         errorElement: <Error/>,
         children: [
+            // Website Home
             {
                 path: '/',
                 element: <Home/>
             },
+            // Authentication 
             {
                 path: '/signin',
                 element: <Signin/>
@@ -25,17 +28,24 @@ const router = createBrowserRouter([
                 path: '/signup',
                 element: <Signup/>
             },
+            // Admin Menu Item
+            {
+                path: '/dashboardmenu',
+                element: <DashboardMenu/>
+            },
+            {
+                path: '/viewdetails/:id',
+                element: <DashViewDetails/>,
+                loader: ({params}) => fetch(`http://localhost:4000/items/${params.id}`)
+            },
             {
                 path: '/addform',
                 element: <AddItem/>
             },
             {
-                path: '/updateform',
-                element: <UpdateItem/>
-            },
-            {
-                path: '/dashboard',
-                element: <Dashboard/>
+                path: '/updateform/:id',
+                element: <UpdateItem/>,
+                loader: ({params}) => fetch(`http://localhost:4000/items/${params.id}`)
             }
         ]
     },

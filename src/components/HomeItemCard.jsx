@@ -2,7 +2,7 @@ const HomeItemCard = ({homeItem}) => {
     const { name, image, deliveryStatus, price, discountRate } = homeItem
     return (
         <div className="card card-compact bg-white rounded-none shadow-sm">
-            <figure><img src={image} alt="Menu Image" className="h-[250px] w-full object-cover"/></figure>
+            <figure><img src={image} alt="Menu Image" className="h-[280px] w-full"/></figure>
             <div className="card-body">
                 <h2 className="text-3xl font-semibold">{name}</h2>
                 <p className="text-xs font-medium text-slate-500">{deliveryStatus} For Serve & Delivery</p>

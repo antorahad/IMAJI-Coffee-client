@@ -1,3 +1,7 @@
+import { RiArrowLeftSLine } from "react-icons/ri";
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+
 const AddItem = () => {
     const handleAddItem = e => {
         e.preventDefault();
@@ -11,7 +15,7 @@ const AddItem = () => {
         const stockStatus = form.stockStatus.value;
         const deliveryStatus = form.deliveryStatus.value;
         const image = form.image.value;
-        const date = form.image.value;
+        const date = form.date.value;
         const details = form.details.value;
 
         const newItem = {
@@ -40,11 +44,24 @@ const AddItem = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: "Success",
+                        text: "Item Added successfully",
+                        icon: "success"
+                    });
+
+                    form.reset()
+                }
             })
     }
     return (
         <div className="min-h-screen py-10 px-5 max-w-6xl mx-auto">
             <div className="flex flex-col gap-5">
+                <Link to={'/dashboardmenu'} className="flex items-center text-baseColor text-sm font-bold">
+                    <RiArrowLeftSLine />
+                    <p>Manage Menu</p>
+                </Link>
                 <h1 className="text-4xl font-semibold">Add Item To Menu</h1>
                 <div className="card w-full bg-white rounded-none border">
                     <form onSubmit={handleAddItem} className="card-body">
@@ -96,9 +113,9 @@ const AddItem = () => {
                                     <span className="label-text">Stock Status</span>
                                 </label>
                                 <select name="stockStatus" className="select select-bordered w-full rounded-none">
-                                    <option disabled selected>Status</option>
-                                    <option>Avaiable</option>
-                                    <option>Unavailable</option>
+                                    <option value="">Status</option>
+                                    <option value="Available">Available</option>
+                                    <option value="Unavailable">Unavailable</option>
                                 </select>
                             </div>
                             <div className="form-control">
@@ -106,11 +123,12 @@ const AddItem = () => {
                                     <span className="label-text">Delivery Status</span>
                                 </label>
                                 <select name="deliveryStatus" className="select select-bordered w-full rounded-none">
-                                    <option disabled selected>Status</option>
-                                    <option>Avaiable</option>
-                                    <option>Unavailable</option>
+                                    <option value="">Status</option>
+                                    <option value="Available">Available</option>
+                                    <option value="Unavailable">Unavailable</option>
                                 </select>
                             </div>
+
                         </div>
                         <div className="grid grid-cols-2 gap-5">
                             <div className="form-control">
@@ -123,7 +141,7 @@ const AddItem = () => {
                                 <label className="label">
                                     <span className="label-text">Date</span>
                                 </label>
-                                <input type="date" name="date" placeholder="Item Sample Image" className="input input-bordered rounded-none" />
+                                <input type="date" name="date" className="input input-bordered rounded-none" />
                             </div>
                         </div>
                         <div className="grid grid-cols-1 gap-5">

@@ -68,7 +68,13 @@ const Navbar = () => {
                                             <li className="py-3"><p>{user.email}</p></li>
                                             <li className={user?.displayName ? 'flex py-3' : 'hidden'}><p>{user.displayName}</p></li>
                                             <li className="py-3">
-                                                <Link to={'/dashboard'}>Dashboard</Link>
+                                                <Link to={'/dashboardmenu'}>Manage Menu</Link>
+                                            </li>
+                                            <li className="py-3">
+                                                <Link to={'/dashboardmenu'}>Manage Events</Link>
+                                            </li>
+                                            <li className="py-3">
+                                                <Link to={'/dashboardmenu'}>Manage News</Link>
                                             </li>
                                             <li className="py-3"><button onClick={logOut}>Sign Out</button></li>
                                         </ul>
@@ -108,7 +114,7 @@ const Navbar = () => {
                                             <li className="py-3"><p>{user.email}</p></li>
                                             <li className={user?.displayName ? 'flex py-3' : 'hidden'}><p>{user.displayName}</p></li>
                                             <li className="py-3">
-                                                <Link to={'/dashboard'}>Dashboard</Link>
+                                                <Link to={'/dashboardmenu'}>Manage Menu</Link>
                                             </li>
                                             <li className="py-3"><button onClick={logOut}>Sign Out</button></li>
                                         </ul>
