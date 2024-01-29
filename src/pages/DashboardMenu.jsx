@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { FaCirclePlus } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 import DashItemCard from "../components/DashItemCard";
+import Error404 from  "../assets/404.gif";
 
 const DashboardMenu = () => {
     const [manageItem, setManageItem] = useState([]);
@@ -43,11 +44,21 @@ const DashboardMenu = () => {
                     </button>
                 </Link>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div>
                 {
-                    currentItems.map(dashItem => <DashItemCard key={dashItem._id} dashItem={dashItem}></DashItemCard>)
+                    currentItems.length > 0 ?
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                            {
+                                currentItems.map(dashItem => <DashItemCard key={dashItem._id} dashItem={dashItem}></DashItemCard>)
+                            }
+                        </div>
+                        :
+                        <div className="flex items-center justify-center">
+                            <img src={Error404} alt="Error Image" />
+                        </div>
                 }
             </div>
+
             <div className="pagination flex items-center justify-center">
                 {Array.from({ length: totalPages }, (_, index) => (
                     <button key={index} onClick={() => paginate(index + 1)} className={currentPage === index + 1 ? "active bg-baseColor hover:bg-baseColor focus:bg-baseColor border-none outline-none btn mx-2 px-5 text-white rounded-none" : "btn mx-2 px-5 rounded-none"}>

@@ -47,7 +47,7 @@ const AddItem = () => {
                 if (data.insertedId) {
                     Swal.fire({
                         title: "Success",
-                        text: "Item Added successfully",
+                        text: "Item Added Successfully",
                         icon: "success"
                     });
 

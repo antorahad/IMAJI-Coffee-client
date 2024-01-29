@@ -64,7 +64,7 @@ const UpdateItem = () => {
                 if (data.modifiedCount > 0) {
                     Swal.fire({
                         title: "Success",
-                        text: "Menu item updateed",
+                        text: "Itam Updateed Successfully",
                         icon: "success"
                     });
                 }

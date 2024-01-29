@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const DashItemCard = ({ dashItem }) => {
+const DashItemCard = ({ dashItem, handleDelete }) => {
     const { _id, name, image, deliveryStatus, price, discountRate, discountPrice } = dashItem
     return (
         <div className="card card-compact bg-white rounded-none shadow-sm">
@@ -25,7 +25,7 @@ const DashItemCard = ({ dashItem }) => {
                 </div>
                 <p className="text-sm font-semibold text-red-500">
                     {
-                        discountRate.length > 1 ?
+                        discountRate !== "0" ?
                             <p>Get discount {discountRate}% </p>
                             :
                             <p className="hidden"></p>
@@ -35,7 +35,7 @@ const DashItemCard = ({ dashItem }) => {
                     <Link to={`/updateform/${_id}`}>
                         <button className="btn btn-warning rounded-none btn-sm font-semibold text-sm text-white">Update</button>
                     </Link>
-                    <button className="btn btn-error rounded-none btn-sm font-semibold text-sm text-white">Delete</button>
+                    <button onClick={() => handleDelete(_id)} className="btn btn-error rounded-none btn-sm font-semibold text-sm text-white">Delete</button>
                 </div>
             </div>
         </div>

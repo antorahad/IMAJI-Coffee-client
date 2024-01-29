@@ -49,7 +49,7 @@ const HomeViewDetails = () => {
                                 discountRate.length > 1 ?
                                     <div className="flex items-center gap-5">
                                         <p className="text-lg font-medium">Get discount {discountRate}% </p>
-                                        
+
                                     </div>
                                     :
                                     <p className="hidden"></p>
@@ -57,9 +57,36 @@ const HomeViewDetails = () => {
                         </div>
                     </div>
                     <div className="text-sm font-semibold flex flex-col gap-5">
-                        <p>Delivery Status: {deliveryStatus} for home delivery</p>
-                        <p>Stock Status: {stockStatus} in stock</p>
+                        <div>
+                            {
+                                deliveryStatus === "Available" ?
+                                <p>Delivery: Available</p>
+                                :
+                                <p>Delivery: Unavailable</p>
+                            }
+                        </div>
+                        <div>
+                        {
+                                stockStatus === "Available" ?
+                                <p>Delivery: In stock</p>
+                                :
+                                <p>Delivery: Out of stock</p>
+                            }
+                        </div>
                         <p>Description: {details}</p>
+                    </div>
+                    <div>
+                        {
+                            deliveryStatus === "Available" ?
+                                <div className="flex items-center gap-5">
+                                    <input type="number" name="quantity" defaultValue="1" className="input input-bordered max-w-32 rounded-none" />
+                                    <button className="btn px-6 rounded-none text-sm text-white bg-baseColor hover:bg-baseColor focus:bg-baseColor border-none outline-none">Order Now</button>
+                                </div>
+                                :
+                                <div>
+                                    <button className="btn btn-disabled px-6 rounded-none text-sm text-white bg-baseColor hover:bg-baseColor focus:bg-baseColor border-none outline-none">Order Now</button>
+                                </div>
+                        }
                     </div>
                 </div>
             </div>
