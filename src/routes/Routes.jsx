@@ -8,6 +8,7 @@ import UpdateItem from "../pages/UpdateItem";
 import Error from "../error/Error";
 import DashboardMenu from "../pages/DashboardMenu";
 import DashViewDetails from "../pages/DashViewDetails";
+import HomeViewDetails from "../pages/HomeViewDetails";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -18,6 +19,11 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home/>
+            },
+            {
+                path: '/viewhomedetails/:id',
+                element: <HomeViewDetails/>,
+                loader: ({params}) => fetch(`http://localhost:4000/items/${params.id}`)
             },
             // Authentication 
             {

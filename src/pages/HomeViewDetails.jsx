@@ -1,28 +1,25 @@
 import { RiArrowLeftSLine } from "react-icons/ri";
 import { Link, useLoaderData } from "react-router-dom";
 
-
-const DashViewDetails = () => {
+const HomeViewDetails = () => {
     const loadedMenuData = useLoaderData();
     console.log(loadedMenuData)
     const {
         name,
         category,
         price,
-        quantity,
         discountRate,
         discountPrice,
         stockStatus,
         deliveryStatus,
         image,
-        details,
-        date
+        details
     } = loadedMenuData
     return (
         <div className="flex flex-col justify-center gap-5 max-w-7xl mx-auto py-10 px-5">
-            <Link to={'/dashboardmenu'} className="flex items-center text-baseColor text-sm font-bold">
+            <Link to={'/'} className="flex items-center text-baseColor text-sm font-bold">
                 <RiArrowLeftSLine />
-                <p>Manage Menu</p>
+                <p>Menu</p>
             </Link>
             <div className="flex flex-col lg:flex-row items-start justify-between gap-5">
                 <div className="w-full lg:w-1/2">
@@ -41,13 +38,13 @@ const DashViewDetails = () => {
                                 discountPrice.length > 1 ?
                                     <div className="flex items-center gap-3">
                                         <p className="text-lg font-medium">Price: $ {discountPrice}</p>
-                                        <del className="text-sm font-medium text-red-500">$ {price}</del>
+                                        <del className="text-sm font-medium">$ {price}</del>
                                     </div>
                                     :
                                     <p className="text-lg font-medium">Price: $ {price}</p>
                             }
                         </div>
-                        <div className="text-red-500">
+                        <div className="text-baseColor">
                             {
                                 discountRate.length > 1 ?
                                     <div className="flex items-center gap-5">
@@ -62,8 +59,6 @@ const DashViewDetails = () => {
                     <div className="text-sm font-semibold flex flex-col gap-5">
                         <p>Delivery Status: {deliveryStatus} for home delivery</p>
                         <p>Stock Status: {stockStatus} in stock</p>
-                        <p>Import Date: {date}</p>
-                        <p>Total Quantity: {quantity}</p>
                         <p>Description: {details}</p>
                     </div>
                 </div>
@@ -72,4 +67,4 @@ const DashViewDetails = () => {
     );
 };
 
-export default DashViewDetails;
+export default HomeViewDetails;
