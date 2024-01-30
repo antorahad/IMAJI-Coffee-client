@@ -3,6 +3,7 @@ import { FaCirclePlus } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 import DashItemCard from "../components/DashItemCard";
 import Error404 from  "../assets/404.gif";
+import Swal from "sweetalert2";
 
 const DashboardMenu = () => {
     const [manageItem, setManageItem] = useState([]);
@@ -13,6 +14,37 @@ const DashboardMenu = () => {
     const handleMenuSearch = e => {
         setSearch(e.target.value);
         setCurrentPage(1);
+    }
+
+    const handleDelete = _id => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:4000/items/${_id}`, {
+                    method: "DELETE",
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data)
+                        if (data.deletedCount > 0) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your file has been deleted.",
+                                icon: "success"
+                            });
+                            const remaining = manageItem.filter( item => item._id !== _id)
+                            setManageItem(remaining);
+                        }
+                    })
+            }
+        });
     }
 
     const filteredItems = manageItem.filter(item => item.name.toLowerCase().includes(search.toLowerCase()));
@@ -49,7 +81,7 @@ const DashboardMenu = () => {
                     currentItems.length > 0 ?
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                             {
-                                currentItems.map(dashItem => <DashItemCard key={dashItem._id} dashItem={dashItem}></DashItemCard>)
+                                currentItems.map(dashItem => <DashItemCard key={dashItem._id} dashItem={dashItem} handleDelete={handleDelete}></DashItemCard>)
                             }
                         </div>
                         :

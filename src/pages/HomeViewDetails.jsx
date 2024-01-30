@@ -44,7 +44,7 @@ const HomeViewDetails = () => {
                                     <p className="text-lg font-medium">Price: $ {price}</p>
                             }
                         </div>
-                        <div className="text-baseColor">
+                        <div className="text-red-500">
                             {
                                 discountRate.length > 1 ?
                                     <div className="flex items-center gap-5">
@@ -68,9 +68,9 @@ const HomeViewDetails = () => {
                         <div>
                         {
                                 stockStatus === "Available" ?
-                                <p>Delivery: In stock</p>
+                                <p>Stock: In stock</p>
                                 :
-                                <p>Delivery: Out of stock</p>
+                                <p>Stock: Out of stock</p>
                             }
                         </div>
                         <p>Description: {details}</p>
@@ -79,7 +79,7 @@ const HomeViewDetails = () => {
                         {
                             deliveryStatus === "Available" ?
                                 <div className="flex items-center gap-5">
-                                    <input type="number" name="quantity" defaultValue="1" className="input input-bordered max-w-32 rounded-none" />
+                                    <input type="number" name="quantity" defaultValue="1" min="1" className="input input-bordered max-w-24 rounded-none" />
                                     <button className="btn px-6 rounded-none text-sm text-white bg-baseColor hover:bg-baseColor focus:bg-baseColor border-none outline-none">Order Now</button>
                                 </div>
                                 :
