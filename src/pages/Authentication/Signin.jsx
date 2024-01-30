@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../provider/AuthProvider";
+import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
 const Signin = () => {
     const { logIn } = useContext(AuthContext);

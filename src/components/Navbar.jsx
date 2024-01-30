@@ -42,7 +42,7 @@ const Navbar = () => {
                 <div className="navbar-end">
                     <ul className="hidden lg:flex items-center text-lg">
                         <li className="px-3"><Link to={'/'}>Home</Link></li>
-                        <li className="px-3"><Link>Menu</Link></li>
+                        <li className="px-3"><Link to={'/menu'}>Menu</Link></li>
                         <li className="px-3"><Link>Events</Link></li>
                         <li className="px-3"><Link>News</Link></li>
                         {

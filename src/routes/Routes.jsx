@@ -1,14 +1,15 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../layout/Layout";
-import Home from "../pages/Home"
-import Signin from "../pages/Signin";
-import Signup from "../pages/Signup";
-import AddItem from "../pages/AddItem";
-import UpdateItem from "../pages/UpdateItem";
+import Home from "../pages/Home/Home"
+import Signin from "../pages/Authentication/Signin";
+import Signup from "../pages/Authentication/Signup";
+import AddItem from "../pages/AdminMenu/AddItem";
+import UpdateItem from "../pages/AdminMenu/UpdateItem";
 import Error from "../error/Error";
-import DashboardMenu from "../pages/DashboardMenu";
-import DashViewDetails from "../pages/DashViewDetails";
-import HomeViewDetails from "../pages/HomeViewDetails";
+import DashboardMenu from "../pages/AdminMenu/DashboardMenu";
+import DashViewDetails from "../pages/AdminMenu/DashViewDetails";
+import HomeViewDetails from "../pages/Home/HomeViewDetails";
+import Menu from "../pages/Menu/Menu";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -24,6 +25,12 @@ const router = createBrowserRouter([
                 path: '/viewhomedetails/:id',
                 element: <HomeViewDetails/>,
                 loader: ({params}) => fetch(`http://localhost:4000/items/${params.id}`)
+            },
+            // Website Menu
+            {
+                path: '/menu',
+                element: <Menu/>,
+                loader: () => fetch('http://localhost:4000/items')
             },
             // Authentication 
             {

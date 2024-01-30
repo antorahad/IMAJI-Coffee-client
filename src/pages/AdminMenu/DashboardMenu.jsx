@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { FaCirclePlus } from "react-icons/fa6";
 import { useEffect, useState } from "react";
-import DashItemCard from "../components/DashItemCard";
-import Error404 from  "../assets/404.gif";
+import DashItemCard from "./DashItemCard";
+import Error404 from  "../../assets/404.gif";
 import Swal from "sweetalert2";
 
 const DashboardMenu = () => {

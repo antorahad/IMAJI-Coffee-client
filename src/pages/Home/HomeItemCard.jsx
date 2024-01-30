@@ -9,28 +9,35 @@ const HomeItemCard = ({homeItem}) => {
             <Link to={`/viewhomedetails/${_id}`}>
                     <h2 className="text-2xl font-semibold">{name}</h2>
                 </Link>
-                <p className="text-xs font-medium text-slate-500">{deliveryStatus} for Home delivery</p>
+                <div className="text-xs font-medium text-slate-500">
+                    {
+                        deliveryStatus === "Available" ?
+                            <p>Available Home delivery</p>
+                            :
+                            <p>Only at Shop</p>
+                    }
+                </div>
                 <div className="flex items-center gap-5">
                     <div>
                         {
-                            discountPrice.length > 1 ?
+                            discountPrice.length > 0 ?
                                 <div className="flex items-center gap-3">
                                     <p className="text-lg font-medium">Price: $ {discountPrice}</p>
-                                    <del className="text-sm font-medium">$ {price}</del>
+                                    <del className="text-sm font-medium text-red-500">$ {price}</del>
                                 </div>
                                 :
                                 <p className="text-lg font-medium">Price: $ {price}</p>
                         }
                     </div>
                 </div>
-                <p className="text-sm font-semibold text-red-500">
+                <div className="text-sm font-semibold text-red-500">
                     {
-                        discountRate.length > 1 ?
+                        discountRate.length > 0 ?
                             <p>Get discount {discountRate}% </p>
                             :
                             <p className="hidden"></p>
                     }
-                </p>
+                </div>
             </div>
         </div>
     );

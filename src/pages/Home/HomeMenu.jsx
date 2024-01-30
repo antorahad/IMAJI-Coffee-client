@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import HomeItemCard from "./HomeItemCard";
+import { Link } from "react-router-dom";
 
 const HomeMenu = () => {
     const [menu, setMenu] = useState([]);
@@ -13,7 +14,9 @@ const HomeMenu = () => {
             <div className="flex items-center justify-between">
                 <h1 className="text-4xl lg:text-5xl font-semibold">Find Your Favourite Menu</h1>
                 <div>
-                    <button className="hidden lg:flex btn px-6 rounded-none text-sm text-white bg-baseColor hover:bg-baseColor focus:bg-baseColor border-none outline-none">Explore Menu</button>
+                    <Link to={'/menu'}>
+                        <button className="hidden lg:flex btn px-6 rounded-none text-sm text-white bg-baseColor hover:bg-baseColor focus:bg-baseColor border-none outline-none">Explore Menu</button>
+                    </Link>
                 </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-10">
@@ -22,7 +25,9 @@ const HomeMenu = () => {
                 }
             </div>
             <div className="flex items-center justify-center lg:hidden">
-                <button className="btn px-6 rounded-none text-sm text-white bg-baseColor hover:bg-baseColor focus:bg-baseColor border-none outline-none">Explore Menu</button>
+                <Link to={'/menu'}>
+                    <button className="hidden lg:flex btn px-6 rounded-none text-sm text-white bg-baseColor hover:bg-baseColor focus:bg-baseColor border-none outline-none">Explore Menu</button>
+                </Link>
             </div>
         </div>
     );
