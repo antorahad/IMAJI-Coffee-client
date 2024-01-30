@@ -35,7 +35,7 @@ const HomeViewDetails = () => {
                     <div className="flex items-center gap-5">
                         <div>
                             {
-                                discountPrice.length > 1 ?
+                                discountPrice.length > 0 ?
                                     <div className="flex items-center gap-3">
                                         <p className="text-lg font-medium">Price: $ {discountPrice}</p>
                                         <del className="text-sm font-medium">$ {price}</del>
@@ -46,7 +46,7 @@ const HomeViewDetails = () => {
                         </div>
                         <div className="text-red-500">
                             {
-                                discountRate.length > 1 ?
+                                discountRate.length > 0 ?
                                     <div className="flex items-center gap-5">
                                         <p className="text-lg font-medium">Get discount {discountRate}% </p>
 
@@ -60,9 +60,9 @@ const HomeViewDetails = () => {
                         <div>
                             {
                                 deliveryStatus === "Available" ?
-                                <p>Delivery: Available</p>
+                                <p>Delivery: Available Home delivery</p>
                                 :
-                                <p>Delivery: Unavailable</p>
+                                <p>Delivery: Only at Shop</p>
                             }
                         </div>
                         <div>

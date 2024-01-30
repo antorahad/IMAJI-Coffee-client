@@ -38,7 +38,7 @@ const DashViewDetails = () => {
                     <div className="flex items-center gap-5">
                         <div>
                             {
-                                discountPrice.length > 1 ?
+                                discountPrice.length > 0 ?
                                     <div className="flex items-center gap-3">
                                         <p className="text-lg font-medium">Price: $ {discountPrice}</p>
                                         <del className="text-sm font-medium text-red-500">$ {price}</del>
@@ -49,7 +49,7 @@ const DashViewDetails = () => {
                         </div>
                         <div className="text-red-500">
                             {
-                                discountRate.length > 1 ?
+                                discountRate.length > 0 ?
                                     <div className="flex items-center gap-5">
                                         <p className="text-lg font-medium">Get discount {discountRate}% </p>
                                         
@@ -60,8 +60,22 @@ const DashViewDetails = () => {
                         </div>
                     </div>
                     <div className="text-sm font-semibold flex flex-col gap-5">
-                        <p>Delivery Status: {deliveryStatus} for home delivery</p>
-                        <p>Stock Status: {stockStatus} in stock</p>
+                    <div>
+                            {
+                                deliveryStatus === "Available" ?
+                                <p>Delivery: Available Home delivery</p>
+                                :
+                                <p>Delivery: Only at Shop</p>
+                            }
+                        </div>
+                        <div>
+                        {
+                                stockStatus === "Available" ?
+                                <p>Stock: In stock</p>
+                                :
+                                <p>Stock: Out of stock</p>
+                            }
+                        </div>
                         <p>Import Date: {date}</p>
                         <p>Total Quantity: {quantity}</p>
                         <p>Description: {details}</p>
