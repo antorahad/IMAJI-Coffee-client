@@ -17,7 +17,7 @@ const HomeViewDetails = () => {
     } = loadedMenuData
     return (
         <div className="flex flex-col justify-center gap-5 max-w-7xl mx-auto py-10 px-5">
-            <Link to={'/'} className="flex items-center text-baseColor text-sm font-bold">
+            <Link to={'/menu'} className="flex items-center text-baseColor text-sm font-bold">
                 <RiArrowLeftSLine />
                 <p>Menu</p>
             </Link>
